@@ -1,0 +1,136 @@
+/*reset and base styles*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+    background: #e423dd;
+z-index: 1;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400% 400%;
+    filter: brightness(1);
+    animation: gradient 20s linear infinite;
+    z-index: -1;
+}
+/*glass wrapper*/
+form{
+    position: relative;
+    width: 400px;
+    padding: 40px;
+    background: rgba(99, 16, 16, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+/*form layout*/
+form{
+    display: flex;
+    flex-direction: column;
+}
+h2{font-size: 28px;
+margin-bottom: 20;
+color: #080219;}
+/*input fields*/
+.input-fields{
+    position: relative;
+    border-bottom: 2px solid #2c8868;
+    margin-bottom: 20px;
+}
+.input-fields input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #62b5b5;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.input-fields label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #091f1f;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+.input-fields input:focus + label,
+.input-fields input:valid + label {
+    top: -5px;
+    color: #00ffea;
+    font-size: 12px;
+    transform: translateY(0);
+}
+/* remerber / forget*/
+.forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #020006;
+}
+remember {
+    accent-color: #0000d1
+}
+.forget leabel {
+    display: flex;
+    align-items: center;
+}
+forget label a {
+    margin-left: 8px;
+}
+.wrapper a {
+    color: #e423dd;
+    text-decoration: none;
+}
+.wrapper a:hover {
+    text-decoration: underline;
+}
+/* button*/
+button{
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #080219;
+    background: #00ffea;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    background: #00e6d4;
+    border-color: #020006;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+    color: #48ff00;
+}
+.register{
+    margin-top: 20px;
+    text-align: center;
+    color: #020006;
+}
+@media (max-width: 450px){
+    form{
+        width: 100%;
+        padding: 30px;
+    }
+}
